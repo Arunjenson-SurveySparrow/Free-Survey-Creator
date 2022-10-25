@@ -68,30 +68,13 @@ html {
 body {
   
   font-family: var(--bodyFont);
-  font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.5;
   color: var(--textColor);
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  max-width: 40em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
   margin: 0;
-  margin-bottom: 1.38rem;
-  font-family: var(--headingFont);
-  font-weight: 400;
-  line-height: 1.3;
-  text-transform: capitalize;
-  letter-spacing: var(--letterSpacing);
+  padding: 0;
 }
+
+
 
 h1 {
   margin-top: 0;
@@ -99,7 +82,9 @@ h1 {
 }
 
 h2 {
-  font-size: 2.441rem;
+  font-weight: 500;
+  font-size: 2.9rem;
+  margin: 0;
 }
 
 h3 {
@@ -119,9 +104,6 @@ small,
   font-size: var(--smallText);
 }
 
-a {
-  text-decoration: none;
-}
 ul {
   list-style-type: none;
   padding: 0;
@@ -155,13 +137,26 @@ ul {
 .btn-block {
   width: 100%;
 }
-
+a{
+  text-decoration: none;
+}
 /* common */
 .flex{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
+.grid{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.container{
+    width: 90vw;
+    max-width: var(--max-width);
+    margin: 0.5rem auto;
+  }
+
 /* NavBar */
 .navbar{
   display: flex;
@@ -200,7 +195,7 @@ ul {
   transition: var(--transition);
 }
 .show-links{
-  height: 425px;
+  height: 335px;
 }
 .nav-link{
   display: block; 
@@ -225,10 +220,8 @@ align-items: center;
 .span-tag img{
   height: 25px;
 }
-.gap
-{
-    gap: 1rem; 
-    align-items: center;
+.gap{
+  gap: 1rem;
 }
 
 @media  screen and (min-width:992px){
@@ -275,10 +268,158 @@ align-items: center;
   .gap{
     margin-left: auto;
   }
+  
 }
 @media  screen and (max-width:1056px){
   .nav-link {
     padding: 0.55 rem 0.55rem;
     font-size: .6rem;
+  }
+}
+
+
+
+
+.first-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.first-1{
+  margin-left:1rem;
+  min-width: 15rem;
+}
+.first-1-p{
+  max-width: 70%;
+}
+.first-2{
+  margin: 0 auto;
+}
+.first-2 img{
+  height: 20rem;
+  padding: 1rem;
+}
+.input-contain{
+  height: 2.7rem;
+  margin-top: 1rem;
+  width: 90%;
+  font-size: 2rem;
+  margin-bottom: .9rem;
+}
+.btn-black {
+  background-color: black;
+  color: white;
+  height: 100%;
+  border: none;
+  font-weight: 100;
+  width: 34%;
+  margin-left: -0.55rem;
+  border-radius: 0 5px 5px 0;
+ border: 1px solid black;
+}
+.input-contain [type="text"] {
+  height: 100%;
+  width: 55%;margin: 0;
+  min-width: 10rem;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid var(--grey-300);
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  columns: var(--grey-300);
+
+}
+@media (min-width:970px){
+  .first-container{
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 3rem;
+  }
+  .btn-black{
+  padding: 0 1.5rem;
+  }
+  .input-contain{
+    min-width: 20rem;
+  }
+  .input-contain [type="text"] {
+    padding: 1rem;
+  }
+  .btn-black{
+  font-size: .85rem;
+  font-weight: 400;
+  width: 25%;
+  } 
+
+}
+
+
+
+/* container -2 */
+.contain-2{
+  margin:  1rem 3rem;
+}
+.survey-info{
+  display: grid;
+  gap: 2rem 3rem;
+}
+.survey-answer{
+  /* margin-bottom: 2rem; */
+  
+}
+.survey-answer p{
+  max-width: 70ch;
+  font-size: 1rem;
+}
+.survey-info h2{
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+.survey-questions{
+  display: flex;
+  flex-direction: column;
+}
+.survey-questions .item{
+  display: flex;
+  gap: 0.2rem 1rem;
+}
+.survey-questions .item .circle{
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-500);
+}
+.survey-questions .item .active{
+  background-color: var(--primary-500);
+  border: 0px;
+}
+.survey-questions .item .line{
+  display: block;
+  width: 2px;
+  height: calc(100% - 10px);
+  margin: auto;
+  background-color: var(--primary-500);
+  border: 0px;
+}
+.survey-questions .item p{
+  padding-bottom: 1.5rem;
+  margin: 0;
+  margin-left: 1rem;
+}
+.text-danger{
+  color: var(--primary-500);
+}
+@media  screen and (min-width:992px){
+  .survey-info{
+    grid-template-columns: 3fr 1fr;
+  }
+  .contain-2{
+    margin: 4rem 3rem;
+  }
+  .survey-answer p{
+    font-size: 1.2rem;
   }
 }
