@@ -884,6 +884,7 @@ margin : 0 5rem
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 .blur{
   opacity: 0.3;
